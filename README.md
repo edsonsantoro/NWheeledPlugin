@@ -1,6 +1,6 @@
 # NWheeled Plugin
   
-  This is a plugin for Unreal Engine 4, that provides users the ability to create vehicles up to 32 wheels. It is an extension of the Engine's basic classes, and can be found under Blueprint Class creation panel, named NWheeledVehicles.
+  This is a plugin for Unreal Engine 4 v4.15 or newer (NOT THE CURRENT RELEASE VERSION 4.14), that provides users the ability to create vehicles up to 32 wheels. It is an extension of the Engine's basic classes, and can be found under Blueprint Class creation panel, named NWheeledVehicles.
   
   ![Creation via Content Browser](https://docs.unrealengine.com/latest/images/Engine/Blueprints/UserGuide/Types/ClassBlueprint/Creation/CreateBP_mainFlow.jpg)
   
