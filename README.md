@@ -6,8 +6,19 @@
   
   Vehicle setup is straightforward, and very similar to UE4 standard one, except for differential settings, where you have to select which of the vehicle's wheels will be connected to it thought a checkbox on Differential Setup Tab.
   
-  You will find an Advanced Vehicle Wheel and Tank blueprint class, but it is currently BROKEN, don't use it, for now. Still working on it. Advanced Vehicle Wheel class will provide suspension camber, spring strengh, suspension damper and toe angle settings for very fine configurations.
+  You will find an Advanced Vehicle Wheel and Tank blueprint class, but it is currently BROKEN, don't use it, for now. Still working on it. Advanced Vehicle Wheel class will provide suspension camber, spring strengh, suspension damper and toe angle settings for very fine configurations. When creating AnimationBlueprints, use VehicleAnimInstance with Wheel Handler node. Please, don't use NVehicleAnimInstance and Advanced Wheel Handler, will crash editor.
   
   To use this plugin, just download and unzip it under your "ProjectFolder/Plugin" folder. Yes, create it if not yet. You can use it as an Engine plugin too, for that, unzip content to "Engine/Plugins/Runtime" folder. Good luck!
   
   Any comments, suggestion or feedbacks to https://forums.unrealengine.com/showthread.php?111324-WIP-Plugin-for-Vehicles&highlight=vehicle+plugin
+
+Workingd Classes:
+
+  BlueprintClass->NWheeledVehicles
+  
+Black Listed Classes:
+
+  AnimBlueprint->NWheeledAnimInstance[AdvancedWheelHandler node]
+  BlueprintClass->AdvancedVehicleWheel
+  
+  
