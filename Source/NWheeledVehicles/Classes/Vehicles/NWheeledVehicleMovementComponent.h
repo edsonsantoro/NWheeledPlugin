@@ -98,9 +98,6 @@ class NWHEELEDVEHICLES_API UNWheeledVehicleMovementComponent : public UWheeledVe
 		/** Compute the forces generates from a spinning tire */
 		void GenerateFullTireForces(class UVehicleWheel* Wheel, const FTireShaderInputNW& Input, FTireShaderOutputNW& Output);
 
-		/** Used to create any physics engine information for this component */
-		virtual void OnCreatePhysicsState() override;
-
 protected:
 
 

@@ -154,8 +154,6 @@ void UNWheeledVehicleMovementComponent::SetupWheels(PxVehicleWheelsSimData* PWhe
 	ExecuteOnPxRigidDynamicReadWrite(UpdatedPrimitive->GetBodyInstance(), [&](PxRigidDynamic* PVehicleActor)
 	{
 
-		VehicleSetupTag = FPhysXVehicleManager::VehicleSetupTag;
-
 		const PxReal LengthScale = 100.f; // Convert default from m to cm
 
 		// Control substepping
@@ -418,51 +416,5 @@ void UNWheeledVehicleMovementComponent::CreateWheels()
 		PVehicle->mWheelsDynData.setTireForceShaderData(WheelIdx, Wheels[WheelIdx]);
 
 		Wheels[WheelIdx]->Init(this, WheelIdx);
-	}
-}
-
-void UNWheeledVehicleMovementComponent::OnCreatePhysicsState()
-{
-	Super::OnCreatePhysicsState();
-
-	ExecuteOnPxRigidDynamicReadWrite(UpdatedPrimitive->GetBodyInstance(), [&](PxRigidDynamic* PVehicleActor)
-	{
-
-	VehicleSetupTag = FPhysXVehicleManager::VehicleSetupTag;
-
-	// only create physx vehicle in game
-	UWorld* World = GetWorld();
-	if (World->IsGameWorld())
-	{
-		FPhysScene* PhysScene = World->GetPhysicsScene();
-
-		if (PhysScene && FPhysXVehicleManager::GetVehicleManagerFromScene(PhysScene))
-		{
-			FixupSkeletalMesh();
-			CreateVehicle();
-
-			if (PVehicle)
-			{
-				FPhysXVehicleManager* VehicleManager = FPhysXVehicleManager::GetVehicleManagerFromScene(PhysScene);
-				VehicleManager->AddVehicle(this);
-
-				CreateWheels();
-
-				//LogVehicleSettings( PVehicle );
-				SCOPED_SCENE_WRITE_LOCK(VehicleManager->GetScene());
-				PVehicle->getRigidDynamicActor()->wakeUp();
-
-				// Need to bind to the notify delegate on the mesh incase physics state is changed
-				if (USkeletalMeshComponent* MeshComp = Cast<USkeletalMeshComponent>(GetMesh()))
-				{
-					MeshOnPhysicsStateChangeHandle = MeshComp->RegisterOnPhysicsCreatedDelegate(FOnSkelMeshPhysicsCreated::CreateUObject(this, &UWheeledVehicleMovementComponent::RecreatePhysicsState));
-					if (UVehicleAnimInstance* VehicleAnimInstance = Cast<UVehicleAnimInstance>(MeshComp->GetAnimInstance()))
-					{
-						VehicleAnimInstance->SetWheeledVehicleMovementComponent(this);
-					}
-				}
-				}
-			}
-		}
 	}
 }
