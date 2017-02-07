@@ -1,0 +1,24 @@
+{
+	"FileVersion": 3,
+	"Version": 1,
+	"VersionName": "0.1",
+	"FriendlyName": "NWheeled Vehicles Plugin",
+	"Description": "A Plugin that add supoort for vehicles with more than 4 wheels, including some functions.",
+	"Category": "Vehicles",
+	"CreatedBy": "Edson Del Santoro",
+	"CreatedByURL": "http://santoro.space",
+	"DocsURL": "http://santoro.space/nwheeled-vehicles-plugin",
+	"MarketplaceURL": "",
+	"SupportURL": "http://santoro.space/nwheeled-vehicles-plugin",
+	"EnabledByDefault": false,
+	"CanContainContent": false,
+	"IsBetaVersion": true,
+	"Installed": false,
+	"Modules": [
+		{
+			"Name": "NWheeledVehicles",
+			"Type": "Runtime",
+			"LoadingPhase": "PreDefault"
+		}
+	]
+}
