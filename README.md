@@ -2,6 +2,8 @@
   
   This is a plugin for Unreal Engine 4 v4.15 or newer (NOT THE CURRENT RELEASE VERSION 4.14), that provides users the ability to create vehicles up to 32 wheels. It is an extension of the Engine's basic classes, and can be found under Blueprint Class creation panel, named NWheeledVehicles.
   
+ >> If you need a plugin for UE4.14 and OLDER, switch to branch 4.14 <<
+  
   ![Creation via Content Browser](https://docs.unrealengine.com/latest/images/Engine/Blueprints/UserGuide/Types/ClassBlueprint/Creation/CreateBP_mainFlow.jpg)
   
   Vehicle setup is straightforward, and very similar to UE4 standard one, except for differential settings, where you have to select which of the vehicle's wheels will be connected to it thought a checkbox on Differential Setup Tab.
