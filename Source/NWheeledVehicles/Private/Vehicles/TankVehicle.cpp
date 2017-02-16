@@ -5,6 +5,7 @@ Vehicle.cpp: ATankVehicle implementation
 TODO: Put description here
 =============================================================================*/
 
+#include "NWheeledVehiclesPluginPrivatePCH.h"
 #include "Vehicles/TankVehicle.h"
 #include "../NWheeledVehiclesPluginPrivatePCH.h"
 #include "WheeledVehicleMovementComponent.h"

@@ -5,8 +5,8 @@ Vehicle.cpp: ANWheeledVehicle implementation
 TODO: Put description here
 =============================================================================*/
 
-#include "Vehicles/NWheeledVehicle.h"
 #include "../NWheeledVehiclesPluginPrivatePCH.h"
+#include "Vehicles/NWheeledVehicle.h"
 #include "Components/SkeletalMeshComponent.h"
 #include "Vehicles/NWheeledVehicleMovementComponent.h"
 #include "Vehicles/WheeledVehicleMovementComponentNW.h"

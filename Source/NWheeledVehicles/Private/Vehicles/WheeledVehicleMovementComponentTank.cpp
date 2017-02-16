@@ -1,7 +1,7 @@
 // Copyright 2016 Santoro Studio, All Rights Reserved.
 
+#include "NWheeledVehiclesPluginPrivatePCH.h"
 #include "Vehicles/WheeledVehicleMovementComponentTank.h"
-#include "../NWheeledVehiclesPluginPrivatePCH.h"
 #include "Components/PrimitiveComponent.h"
 
 #include "PhysXPublic.h"
