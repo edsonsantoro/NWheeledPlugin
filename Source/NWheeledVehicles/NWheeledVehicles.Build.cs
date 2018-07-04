@@ -4,11 +4,11 @@ namespace UnrealBuildTool.Rules
 {
     public class NWheeledVehicles : ModuleRules
     {
-        public NWheeledVehicles(TargetInfo Target)
+        public NWheeledVehicles(ReadOnlyTargetRules Target) : base(Target)
         {
             PublicIncludePaths.Add("NWheeledVehicles/Classes");
             PrivateIncludePaths.Add("NWheeledVehicles/Private");
-
+            
             PublicDependencyModuleNames.AddRange(
                 new string[]
                 {
@@ -19,12 +19,20 @@ namespace UnrealBuildTool.Rules
                     "BlueprintGraph",
                     "AnimGraph",
                     "AnimGraphRuntime",
+                    "PhysX",
+                    "APEX",
                     "PhysXVehicles",
                     "PhysXVehicleLib",
                 }
             );
-
-            SetupModulePhysXAPEXSupport(Target);
+            
+            PrivateDependencyModuleNames.AddRange(
+                new string[]
+                {
+                    "PhysXVehicles",
+                    "PhysXVehicleLib",
+                }
+            );
         }
     }
 }
