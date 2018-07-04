@@ -9,7 +9,7 @@
 #include "TireConfig.h"
 
 #include "PhysXPublic.h"
-#include "Private/PhysXVehicleManager.h"
+#include "PhysXVehicleManager.h"
 
 #define LOCTEXT_NAMESPACE "UNWheeledVehicleMovementComponent"
 
