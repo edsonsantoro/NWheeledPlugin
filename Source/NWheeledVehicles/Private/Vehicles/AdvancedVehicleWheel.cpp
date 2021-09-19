@@ -7,7 +7,7 @@
 #include "Vehicles/TireType.h"
 #include "WheeledVehicleMovementComponent.h"
 #include "TireConfig.h"
-#include "Private/PhysXVehicleManager.h"
+#include "PhysXVehicleManager.h"
 #include "PhysXPublic.h"
 
 
